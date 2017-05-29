@@ -1,0 +1,16 @@
+#play 1
+- name: play 1
+  hosts: localhost
+  tasks:
+   - name: install vim
+     apt: pkg=vim state=installed
+     register: output
+   - debug: msg={{output}}
+#play 2
+- name: play 2
+  hosts: localhost
+  tasks:
+   - name: install emacs24
+     apt: pkg=emacs24 state=installed
+     register: output
+   - debug: msg={{output}}

@@ -1,0 +1,11 @@
+- name: looping in advance
+  hosts: localhost
+  tasks:  
+   - name: looping over hashes
+     vars:
+       users:
+         name: Pradumna
+         phone: 996045
+         address: Baner
+     with_dict: "{{users}}"
+     debug: msg={{item.value}}

@@ -1,0 +1,26 @@
+- name: multipletasks
+  hosts: localhost
+  tasks: 
+   - name: First task
+#     action: ping
+     command: echo "first task completed"
+     register: output
+   - debug: msg={{output}}
+   - name: second task
+     vars:
+       user:
+         name: "just"
+     command: echo "2nd task completed " {{user.name}}
+     register: output
+   - debug: msg={{output}}
+   - name: 3rd task
+#     action: ping
+     vars:
+       user:
+         number: 3rd
+     command: echo {{user.number}} "task completed"
+     register: output
+   - debug: msg={{output}} 
+   - name: 4th task ping
+     action: ping
+       

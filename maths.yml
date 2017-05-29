@@ -1,0 +1,33 @@
+- name: mathamatical operations
+  hosts: localhost
+  tasks:
+   - name: add
+     vars:
+       user:
+         a: "4"
+         b: "5"
+     command: echo $(expr {{user.a}} + {{user.b}})
+     register: output
+   - debug: msg={{output}}
+# sub!!!!!!!!
+   - name: sub
+     vars: 
+       user:
+         e: "6"
+         f: "3"
+     command: echo $(expr {{user.e}} - {{user.f}})  
+     register: output
+   - debug: msg={{output}}
+# multiplex*********
+   - name: mul
+     vars:
+       user:
+         m: "4"
+         n: "6"
+     command: echo $(expr {{user.m}} * {{user.n}})
+     register: output
+   - debug: msg={{output}}
+
+
+
+   
