@@ -1,0 +1,7 @@
+- hosts: localhost
+  tasks:
+   - name: json
+     command: "cat /home/pradumnap/Desktop/pradumna/ansible/roles/filter.json"
+     register: result
+   - set_fact: myvar={{ result.stdout | from_json }} 
+   - debug: msg={{result}}

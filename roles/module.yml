@@ -1,0 +1,8 @@
+- name: module
+  hosts: localhost
+  tasks:
+   - name: testing
+     command: echo "testing" return_content=yes
+     register: output
+   - fail: msg="service is not happy"
+     when: "'testing' not in output.content"
