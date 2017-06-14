@@ -1,0 +1,11 @@
+# tasks file for user
+- debug: msg=Hello!!
+#- debug: msg=RIGHT
+#  tasks:
+- name: role1
+  action: ping
+  register: output
+- debug: msg={{output}}
+- name: role2
+  shell: echo "testing"
+

@@ -1,0 +1,16 @@
+#shell operations & nested operations
+- name: shell operations
+  hosts: localhost
+  tasks:
+   - name: shell_operations
+     shell: echo "a {{item[0]}}"
+     with_nested:
+       - [ '1','3','9' ]
+     register: output
+   - debug: msg={{output}}
+   - name: testing
+     command: echo "testing"
+     register: output
+   - debug: msg={{output}}
+
+

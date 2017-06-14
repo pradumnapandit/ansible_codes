@@ -1,0 +1,6 @@
+- name: group example
+  hosts: localhost
+  tasks:
+    -  group:
+         name: gr
+         state: present

@@ -1,0 +1,13 @@
+- name: looping combine
+  hosts: localhost
+  tasks:
+   - name:
+     vars:
+      num: [ '1','2','3' ]
+      alf: [ 'a','b','c' ]
+      let: [ 't','d','m' ]
+     debug: msg={{item}}
+     with_together:
+      - "{{alf}}"
+      - "{{num}}"
+      - "{{let}}"

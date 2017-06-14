@@ -1,0 +1,13 @@
+- name: loops_with_dicts
+  hosts: localhost
+  tasks:
+   - name: dictionary operate
+     vars:
+       dicts:
+         alice:
+           name: WT
+           area: Baner
+           number: 411045
+     with_dict: "{{dicts}}"
+     debug: msg="{{item.key}}"
+    

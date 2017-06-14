@@ -1,0 +1,17 @@
+- name: first play with info
+  hosts: localhost
+  tasks: 
+   - name: info
+     vars: 
+       user:
+         name: "Pradumna"
+         surname: "Panditrao"
+         address: "Baner"
+     command: echo {{user.name}} {{user.surname}} stays in {{user.address}}
+     register: output
+   - debug: msg={{output}}
+   - name: additional_info
+     command: echo "wait adding"
+     register: output
+   - debug: msg={{output}}
+    

@@ -1,0 +1,46 @@
+---
+- name: first play with web
+  hosts: localhost
+  vars:
+    description: checking
+  tasks:
+   - name: checking echo command
+     shell: echo "checking command" 
+     register: output
+   - debug: msg={{output}}
+#---------------------------------------
+- name: second play
+  hosts: localhost
+  tasks:
+    - action: ping
+#----------------------------------------      
+- name: 3rd play
+  hosts: localhost
+  tasks:
+   - name: pinging check
+     action: ping
+#-----------------------------------------
+- name: 4th play with personal info
+  hosts: localhost
+#  vars: 
+#    user: 
+#      name: "Pradumna"
+  tasks:
+   - name:
+     vars:
+       user:
+         name: "Pradumna"
+         surname: "Panditrao"
+         address: "Pune"
+     command: echo Hello to {{user.name}} {{user.surname}} who stays in {{user.address}}
+     register: output
+   - debug: msg={{output}}
+#---------------------------------------------
+- name: 5th play with info
+  hosts: localhost
+#  foods:
+#    - apple
+#    - Mango
+
+...
+
