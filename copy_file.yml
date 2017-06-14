@@ -1,8 +1,0 @@
-- name: mathamatica operations
-  hosts: localhost
-  tasks: 
-   - name: add
-     command: cp /home/pradumnap/Desktop/pradumna/ansible/hosts  /home/pradumnap/Desktop/pradumna/ansible/hosts1
-     register: output
-   - debug: msg={{output}}
-     
