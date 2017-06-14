@@ -1,9 +1,0 @@
-# apt operations
-- name: apt command
-  hosts: localhost
-  tasks:
-   - debug: msg={{output}}
-   - name: apt-get vlc
-     apt: pkg=hardinfo state=installed
-     register: output
-   - debug: msg={{output}}
