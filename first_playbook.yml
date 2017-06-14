@@ -1,6 +1,0 @@
-# first ansible
-- name: Firstone
-  hosts: localhost
-  tasks: 
-    - name: First task in intiated
-      action: ping
